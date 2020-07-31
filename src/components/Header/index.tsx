@@ -1,0 +1,32 @@
+import React, { useContext } from 'react';
+import Switch from 'react-switch';
+import { ThemeContext } from 'styled-components';
+import { shade } from 'polished';
+
+import { Container } from './styles';
+
+interface Props {
+  toggleTheme(): void;
+}
+
+const Header: React.FC<Props> = ({ toggleTheme }) => {
+  const { colors, title } = useContext(ThemeContext);
+
+  return (
+    <Container>
+      Hello World
+      <Switch 
+        onChange={toggleTheme}
+        checked={title === 'dark'}
+        checkedIcon={false}
+        uncheckedIcon={false}
+        height={18}
+        width={40}
+        offColor={shade(0.15, colors.primary)}
+        onColor={shade(-0.8, colors.background)}
+      />
+    </Container>
+  );
+}
+
+export default Header;
