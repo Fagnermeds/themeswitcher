@@ -23,7 +23,7 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
         height={18}
         width={40}
         offColor={shade(0.15, colors.primary)}
-        onColor={shade(-0.8, colors.background)}
+        onColor={colors.secundary}
       />
     </Container>
   );
